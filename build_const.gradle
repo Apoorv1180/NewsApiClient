@@ -1,0 +1,113 @@
+ext {
+
+    /**
+     * project specs
+     */
+    minSdk = 26
+    targetSdk = 31
+    compileSdkVersion = 31
+    buildToolsVersion = '31.0.0'
+    applicationId = "com.example.newsapiclient"
+    versionCode = 0000001
+    versionName = "0.0.1"
+    jvmTarget = "1.8"
+
+    /**
+     * dependency version
+     */
+    lifecycle_version = "2.2.0"
+    arch_version = "2.1.0"
+    room_version = "2.4.2"
+    coroutines_version = "1.6.1"
+    dagger_version = "2.41"
+    retrofit_version = "2.9.0"
+    okhttp_interceptor_version = "4.9.3"
+    glide_version = "4.13.1"
+    core_ktx_version = "1.7.0"
+    app_compat_version = "1.4.1"
+    material_version = "1.5.0"
+    constraint_layout_version = "2.1.3"
+    j_unit_version = "4.13.2"
+    test_ext_junit_version = "1.1.3"
+    espresso_core_version = "3.4.0"
+
+    /**
+     * lib arrays
+     * */
+
+    generalImplLib = [
+            core_ktx        : "androidx.core:core-ktx:$core_ktx_version",
+            appcompat       : "androidx.appcompat:appcompat:$app_compat_version",
+            material        : "com.google.android.material:material:$material_version",
+            constraintlayout: "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    ]
+
+    lifecycleImplLib = [
+            viewmodel_ktx       : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            livedata_ktx        : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            runtime_ktx         : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            viewmodel_savedstate: "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    ]
+
+    roomImplLib = [
+            room_runtime: "androidx.room:room-runtime:$room_version",
+            room_ktx    : "androidx.room:room-ktx:$room_version"
+    ]
+
+    coroutineImplLib = [
+            kotlinx_coroutine_core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            kotlinx_coroutine_android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    ]
+
+    daggerImplLib = [
+            dagger: "com.google.dagger:dagger:$dagger_version"
+    ]
+
+    retrofitImplLib = [
+            retrofit           : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            gson               : "com.google.code.gson:gson:$retrofit_version",
+            converter_gson     : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            logging_interceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp_interceptor_version"
+    ]
+
+    glideImplLib = [
+            glide: "com.github.bumptech.glide:glide:$glide_version"
+    ]
+
+    lifecycleKaptLib = [
+            lifecycle_compiler: "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    ]
+
+    roomKaptLib = [
+            room_compiler: "androidx.room:room-compiler:$room_version"
+    ]
+
+    daggerKaptLib = [
+            dagger_compiler: "com.google.dagger:dagger-compiler:$dagger_version"
+    ]
+
+    glideKaptLib = [
+            glide_compiler: "com.github.bumptech.glide:compiler:$glide_version"
+    ]
+
+    testImplLib = [
+            junit: "junit:junit:$j_unit_version"
+    ]
+
+    androidTestImplLib = [
+            test_ext_junit: "androidx.test.ext:junit:$test_ext_junit_version",
+            espresso_core : "androidx.test.espresso:espresso-core:$espresso_core_version"
+    ]
+
+
+    /**
+     * module(s) dependency array collection
+     * */
+
+    //app
+    appImplArray = generalImplLib + lifecycleImplLib + roomImplLib + coroutineImplLib + daggerImplLib + retrofitImplLib + glideImplLib
+    appKaptArray = lifecycleKaptLib + roomKaptLib + daggerKaptLib + glideKaptLib
+    appTestArray = testImplLib
+    appAndroidTestImplArray = androidTestImplLib
+
+}
